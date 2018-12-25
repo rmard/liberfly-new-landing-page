@@ -9,12 +9,12 @@ class Form extends Component {
   }
   state = {
     ciaoutra: false,
-    sending: false,
+    loading: false,
     success: false,
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({sending: true});
+    this.setState({loading: true});
     let formdata = new FormData();
     //nome email telefone relato assunto
     formdata.append('origem', 'lp');
@@ -28,7 +28,7 @@ class Form extends Component {
       body: formdata
     })
     .then((res)=>{
-      this.setState({sending: false});
+      this.setState({loading: false});
       if(res.status===200) {
         this.setState({success: true});
         alert("Reclamação enviada com sucesso! Em breve entraremos em contato.");
@@ -38,12 +38,19 @@ class Form extends Component {
         alert("Ocorreu um erro ao enviar o formulário. Pode tentar novamente, por favor?");
     })
     .catch((res)=>{
-      this.setState({sending: false});
+      this.setState({loading: false});
     })
   } 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={(this.state.loading)?'loadingform':''}>
+        {(this.state.loading) &&
+          <div className='loading'>
+            <div className='ball'></div>
+            <div className='ball'></div>
+            <div className='ball'></div>
+          </div>
+        }
         <div className='form-inner'>
           <h2>FAÇA SUA<br/>RECLAMAÇÃO</h2>
           <div className='row'>
@@ -91,7 +98,7 @@ class Form extends Component {
           </div> 
         </div>
         <div className='center-align'>
-          <button className='submit'>ENVIAR RECLAMAÇÃO</button>  
+          <button className='submit'>{this.state.loading?'ENVIANDO...':'ENVIAR RECLAMAÇÃO'}</button>  
           <br/>
           <img className='form-logo' src='./logo-liberfly.png' />                             
         </div>
