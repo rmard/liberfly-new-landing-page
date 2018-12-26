@@ -69,8 +69,8 @@ class Form extends Component {
             <div className='col-6'>
               <label>Problema</label>
               <select id='issue'>
-                <option>Atraso de vôo</option>
-                <option>Cancelamento de vôo</option>
+                <option>Atraso de voo</option>
+                <option>Cancelamento de voo</option>
                 <option>Overbooking</option>
                 <option>Problemas com bagagem</option>
                 <option>Outro</option>
