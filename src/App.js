@@ -77,7 +77,7 @@ class Form extends Component {
               </select>
             </div>  
             <div className='col-6'>
-              <label>Companhia</label>
+              <label>Companhia Aérea</label>
               {this.state.ciaoutra ? 
                 <input type='text' id='ciaoutra' required/>
               :
