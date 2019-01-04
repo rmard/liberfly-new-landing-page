@@ -261,7 +261,12 @@ form h2 {
   font-size: 80%;
 }
 
+label.center {
+  color: #b1b1b1;
+}
+
 .col-12 input,
+.col-12 textarea,
 .col-6 select {
   background-color: #eaeaea;
   border: none;
