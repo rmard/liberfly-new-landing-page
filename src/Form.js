@@ -1,4 +1,5 @@
 import React from 'react';
+import InputMask from 'react-input-mask';
 
 export default class Form extends React.Component {
   componentDidMount() {
@@ -64,7 +65,10 @@ export default class Form extends React.Component {
             </div>
             <div className='col-12'>
               <label>Telefone</label>
-              <input type='tel' id='tel' required/>
+              <InputMask 
+                placeholder='(DDD) ________'
+                minLength='13'
+                mask='(99) 999999999' maskChar=' ' type='tel' id='tel' required/>
             </div>
             <div className='col-12'>
               <label>Email</label>
