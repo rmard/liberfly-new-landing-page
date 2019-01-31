@@ -1,5 +1,6 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
+import queryString from 'query-string';
 
 export default class Form extends React.Component {
   componentDidMount() {
@@ -14,6 +15,8 @@ export default class Form extends React.Component {
     e.preventDefault();
     this.setState({loading: true});
     let formdata = new FormData();
+    if(queryString.parse(window.location.search).a!==undefined)
+      formdata.append('a', queryString.parse(window.location.search).a);
     //nome email telefone relato assunto
     formdata.append('origem', 'lp');
     formdata.append('nome', document.getElementById('name').value);
