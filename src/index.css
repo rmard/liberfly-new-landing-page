@@ -12,3 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ul.autocomplete-content {
+	list-style: none;
+	margin-top:0;
+	background-color: #eaeaea;
+	border: none;
+	width: 80%;
+	font-size: 100%;
+	padding: 15px;
+	border-radius: 5px;
+}
+.autocomplete-content > li span span.highlight{
+	font-weight: bold;
+}
+.autocomplete-content > li:hover{
+	background-color: #D6D6D6;
+	cursor:pointer;
+}
+.autocomplete-content.dropdown-content {
+
+    overflow-y: scroll;
+    max-height: 165px;
+
+}
