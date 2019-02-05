@@ -4,6 +4,7 @@ import FormStep2 from './FormStep2';
 import './App.css';
 import './App-mobile.css';
 import './simple-grid.min.css';
+import queryString from 'query-string';
 
 class App extends Component {
   state = {
@@ -23,7 +24,8 @@ class App extends Component {
           <img className='bg-plane' alt='' src='./Modern-Plane-PNG-Free-Download.png'/>
         </div>
         <div className='app'>
-          {this.state.step === 1 && 
+          {(queryString.parse(window.location.search).form!==undefined 
+           || this.state.step === 1 ) && 
             <Form 
               goToStepTwo={(id,t)=>this.goToStepTwo(id,t)}
             />
