@@ -1,6 +1,7 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 import queryString from 'query-string';
+import {Autocomplete} from 'react-materialize';
 
 export default class Form extends React.Component {
   componentDidMount() {
@@ -48,6 +49,20 @@ export default class Form extends React.Component {
       this.setState({loading: false});
       alert("Ocorreu um erro ao enviar o formulário. Por favor tente novamente.");
     })
+  }
+  handlelistaAutoComplete(){
+    let listaEmpresasNova = {};
+    let listaEmpresas = {};
+    fetch('https://sistema.liberfly.com.br/empresas/lista.json',{ method: "GET"})
+      .then(response => response.json())
+      .then(data => listaEmpresas);
+
+    for (let i = 0; i < listaEmpresas.lista_empresas.length; i++) {
+      listaEmpresasNova = Object.assign({}, listaEmpresasNova, {
+        [listaEmpresas.lista_empresas[i]]: null
+      });
+    }
+    return listaEmpresasNova;
   } 
   render() {
     return (
@@ -89,22 +104,11 @@ export default class Form extends React.Component {
             </div>  
             <div className='col-6'>
               <label>Companhia Aérea</label>
-              {this.state.ciaoutra ? 
-                <input type='text' id='ciaoutra' required/>
-              :
-                <select id='cia' onChange={(e)=>{
-                  if(e.target.value==='Outra') {
-                    this.setState({ciaoutra: true});
-                    setTimeout(()=>document.getElementById('ciaoutra').focus(),500);
+              Autocomplete id='cia'
+                  data={
+                    this.handlelistaAutoComplete()
                   }
-                }}>
-                  <option>Avianca</option>
-                  <option>Azul</option>
-                  <option>GOL</option>
-                  <option>LATAM</option>
-                  <option>Outra</option>
-                </select>
-              }
+                />
             </div>
           </div> 
         </div>
