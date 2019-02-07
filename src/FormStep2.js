@@ -54,7 +54,7 @@ export default class Form extends React.Component {
           </div> 
         </div>
         <div className='center-align'>
-          <button className='submit'>{this.state.loading?'ENVIANDO...':'ENVIAR RELATO'}</button>  
+          <button className='submit'>{this.state.loading?'ENVIANDO...':'AVANÇAR'}</button>  
           <br/>
           <img className='form-logo' alt='LIBERFLY' src='./logo-liberfly.png' />                             
         </div>

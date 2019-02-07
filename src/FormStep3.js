@@ -86,7 +86,7 @@ export default class Form extends React.Component {
               <div className={`icon-doc doc1 ${this.state.docSent[0]?'green':''}`}>
               </div><br/>
               <div className='icon-doc-label'>
-                Documento com foto
+                Documento oficial com foto
               </div><br/>
               <button className={`submit doc ${this.state.docSent[0]?'green':''}`}
                 type='button' 
@@ -112,7 +112,7 @@ export default class Form extends React.Component {
               <div className={`icon-doc doc3 ${this.state.docSent[2]?'green':''}`}>
               </div><br/>
               <div className='icon-doc-label'>
-                Passagem ou E-Ticket
+                Passagem ou <br/>E-Ticket
               </div><br/>
               <button className={`submit doc ${this.state.docSent[2]?'green':''}`}
                 type='button' 
@@ -124,7 +124,15 @@ export default class Form extends React.Component {
           </div> 
         </div>
         <div className='center-align'>
-          <img className='form-logo' alt='LIBERFLY' src='./logo-liberfly.png' />                             
+        <br/>
+          &emsp;&ensp;
+          <button 
+            type='button' 
+            className='submit'
+            onClick={()=>{window.location.href = 'https://www.liberfly.com.br/confirmacao-de-indenizacao/'}}
+          >
+            {this.state.loading?'ENVIANDO...':'FINALIZAR'}
+          </button>  
         </div>
       </form>
     )
