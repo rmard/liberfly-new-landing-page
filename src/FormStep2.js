@@ -23,8 +23,9 @@ export default class Form extends React.Component {
       this.setState({loading: false});
       if(res.status===200) {
         this.setState({success: true});
-        alert("Reclamação enviada com sucesso! Em breve entraremos em contato.");
-        this.props.closeModal();
+        // alert("Reclamação enviada com sucesso! Em breve entraremos em contato.");
+        // this.props.closeModal();
+        this.props.goToStepThree();
       }
       else
         alert("Ocorreu um erro ao enviar o formulário. Pode tentar novamente, por favor?");

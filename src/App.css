@@ -1,6 +1,7 @@
 
 body {
-  background-image: linear-gradient(#2d4075, #333643);
+/*  background-image: linear-gradient(#2d4075, #333643); */
+  background-image: linear-gradient(#005be4,#01225d);
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
   color: white;
@@ -54,7 +55,7 @@ body {
 .bg-cloud-1 {
   position: fixed;
   height: 28vh;
-  opacity: 0.25;
+  opacity: 0.4;
   top: 2vh;
   left: 1vh;
   animation-name: cloudtop;
@@ -188,9 +189,10 @@ form {
   z-index: 5;
   position: absolute;
   background-color: white;
-  left: 30vw;
-  width: 40vw;
+  left: 26vw;
+  width: 46vw;
   top: 15vh;
+  min-height: 60vh;
   border-radius: 8px;
   box-shadow: 0px 0px 30px rgba(0,0,0,0.4);
   color: #141428;
@@ -295,4 +297,61 @@ button.submit {
 .form-logo {
   margin-top: 30px;
   height: 50px;
+}
+
+/* step 3 */
+
+.icon-doc {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  background-size: contain;
+}
+
+.doc1 {
+  background-image: url(doc1.png);
+}
+
+.doc1.green {
+  background-image: url(doc1green.png);
+}
+
+.doc2 {
+  background-image: url(doc2.png);
+}
+
+.doc3 {
+  background-image: url(doc3.png);
+}
+
+.doc2.green {
+  background-image: url(doc2green.png);
+}
+
+.doc3.green {
+  background-image: url(doc3green.png);
+}
+
+.icon-doc-label {
+  font-weight: bold;
+  font-size: 90%;
+  height: 25px;
+  padding: 20px 10px 0px 10px;
+}
+
+button.submit.doc {
+  background-color: #4097d3;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+button.submit.green {
+  background-color: #28df2c;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+input[type=file] {
+  display: none;
 }

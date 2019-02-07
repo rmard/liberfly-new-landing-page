@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import FormStep2 from './FormStep2';
+import FormStep3 from './FormStep3';
 import './App.css';
 import './App-mobile.css';
 import './simple-grid.min.css';
@@ -8,7 +9,7 @@ import queryString from 'query-string';
 
 class App extends Component {
   state = {
-    step: 0,
+    step: 0, //retornar para 0
     caso_id: false,
     caso_token: false,
   }
@@ -33,10 +34,18 @@ class App extends Component {
           {this.state.step === 2 && 
             <FormStep2 
               closeModal={()=>this.setState({step: 0})}
+              goToStepThree={()=>this.setState({step:3})}
               caso_id={this.state.caso_id}
               caso_token={this.state.caso_token}
             />
-          }          
+          }       
+          {this.state.step === 3 && 
+            <FormStep3 
+              closeModal={()=>this.setState({step: 0})}
+              caso_id={this.state.caso_id}
+              caso_token={this.state.caso_token}
+            />
+          }                    
           <div className='nav'>
             
             <span>RECLAMAÇÃO</span>

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
 
 	.bg-plane {
 		display: hidden!important;
@@ -36,8 +36,8 @@
 
 	form {
 		height: auto;
-		width: 96vw;
-		left: 2vw;
+		width: 90vw;
+		left: 5vw;
 		top: 1vh;
 	}
 	.form-inner {
@@ -63,4 +63,10 @@
 		padding-top: 40%;
 		height: 55%;
 	}
+	button.submit.doc {
+	  	background-color: #4097d3;
+	  	padding: 10px 20px;
+	  	margin-top: -10px;
+	  	margin-bottom: 30px;
+	}	
 }
